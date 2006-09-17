@@ -11,9 +11,12 @@ public class AnonymousInnerExample {
 
 	public void aMethod() {
 		String s = new String("abc");
+		final String s1 = "finalstring";
 		bMethod(new Printer() {
 			public void print() {
-				System.out.println("The String is " + s);
+				//will give compiler error
+				//System.out.println("The String is " + s);
+				System.out.println(s1); //s1 is final
 			}
 		});
 	}
